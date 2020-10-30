@@ -108,8 +108,8 @@ export const CellInput = ({
 
         const keys = {}
 
-        keys["Shift-Enter"] = () => on_submit()
-        keys["Ctrl-Enter"] = async () => {
+        keys["Cmd-Enter"] = () => on_submit(cm.getValue())
+        keys["Shift-Enter"] = async () => {
             // we await to prevent an out-of-sync issue
             await on_add_after()
 
@@ -119,10 +119,10 @@ export const CellInput = ({
             }
         }
         // Page up and page down are fn+Up and fn+Down on recent apple keyboards
-        keys["PageUp"] = () => {
+        keys["Cmd-Alt-Up"] = () => {
             on_focus_neighbor(cell_id, -1, 0, 0)
         }
-        keys["PageDown"] = () => {
+        keys["Cmd-Alt-Down"] = () => {
             on_focus_neighbor(cell_id, +1, 0, 0)
         }
         keys["Shift-Tab"] = "indentLess"

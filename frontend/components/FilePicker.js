@@ -77,8 +77,7 @@ export class FilePicker extends Component {
         this.cm.setOption(
             "extraKeys",
             map_cmd_to_ctrl_on_mac({
-                "Ctrl-Enter": this.on_submit,
-                "Ctrl-Shift-Enter": this.on_submit,
+                "Shift-Enter": this.on_submit,
                 "Enter": this.on_submit,
                 "Esc": (cm) => {
                     cm.closeHint()
